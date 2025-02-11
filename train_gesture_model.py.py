@@ -38,14 +38,12 @@ for j in range(number_of_class):
         cv2.imshow("frame", frame)  
         cv2.waitKey(25)  
         cv2.imwrite(os.path.join(DATA_DIR, str(j), "{}.jpg".format(counter)), frame)
-
+        
         counter += 1  
- 
         if cv2.waitKey(1) == 27:  # press esc: close
            cv2.destroyAllWindows()
            cap.release()
            break
-
 
 cap.release()
 cv2.destroyAllWindows()
