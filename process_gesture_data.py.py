@@ -10,14 +10,11 @@ mp_drawing_styles = mp.solutions.drawing_styles
 
 hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
 
-# Veri dizini
 DATA_DIR  = "./data"
 
-# Boş listeler
 data = []  
 labels = [] 
 
-# Veri dizinindeki her alt klasör için döngü
 for dir_ in os.listdir(DATA_DIR):  
     for img_path in os.listdir(os.path.join(DATA_DIR, dir_)):
         data_aux = []  
@@ -38,7 +35,6 @@ for dir_ in os.listdir(DATA_DIR):
                     x_.append(x)  
                     y_.append(y)  
 
-                # El hareketlerini normalize etme
                 for i in range(len(hand_landmarks.landmark)):
                     x = hand_landmarks.landmark[i].x
                     y = hand_landmarks.landmark[i].y
